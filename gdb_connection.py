@@ -23,6 +23,7 @@ class BeginSession(gdb.Command):
         elf = argv[0]
         ip = 'localhost:3333'
         gdb.execute('set height unlimited')
+        gdb.execute('set pagination off')
         gdb.execute(f'file {elf}')
         gdb.execute(f'target remote {ip}')
         gdb.execute('monitor reset halt')
